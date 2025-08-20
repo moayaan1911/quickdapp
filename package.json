@@ -10,8 +10,7 @@
     "quickdapp-build": "cd contracts && forge build && cd .. && next build",
     "quickdapp-test": "cd contracts && forge test && cd .. && next lint",
     "quickdapp-dev": "cd contracts && forge compile && cd .. && next dev --turbopack",
-    "quickdapp-clean": "cd contracts && forge clean && cd .. && rm -rf .next out",
-    "quickdapp-init": "cd contracts && forge install foundry-rs/forge-std && forge build && cd .. && next build && next start"
+    "quickdapp-init": "cd contracts && forge install && forge build && cd .. && next build && next start"
   },
   "dependencies": {
     "ethers": "^6.15.0",

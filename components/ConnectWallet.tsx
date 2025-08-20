@@ -3,7 +3,7 @@ import { createThirdwebClient } from "thirdweb";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 
 import { inAppWallet, createWallet } from "thirdweb/wallets";
-import { 
+import {
   // Major Mainnets
   ethereum,
   polygon,
@@ -73,13 +73,13 @@ import {
   coreMainnet,
   coreTestnet,
   godWoken,
-  godWokenTestnetV1
+  godWokenTestnetV1,
 } from "thirdweb/chains";
 
 const client = createThirdwebClient({
-  clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID as string,
+  clientId:
+    process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID || "placeholder-client-id",
 });
-
 // All supported chains - Comprehensive list from Thirdweb
 const supportedChains = [
   // Major Mainnets
@@ -151,7 +151,7 @@ const supportedChains = [
   astriaEvmDusknet,
   etherlinkTestnet,
   coreTestnet,
-  godWokenTestnetV1
+  godWokenTestnetV1,
 ];
 
 const wallets = [
