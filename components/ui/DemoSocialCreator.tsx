@@ -6,62 +6,11 @@ import { SiBuymeacoffee } from "react-icons/si";
 import { FiGlobe, FiUser } from "react-icons/fi";
 
 export default function DemoSocialCreator() {
-  // const [isLoaded, setIsLoaded] = useState(false);
-
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Video, Social Links and Creator Info in same row */}
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          {/* Demo Video */}
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              See It In Action
-            </h2>
-
-            <div className="relative">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="relative bg-black rounded-xl overflow-hidden shadow-xl"
-                style={{ aspectRatio: "16/9" }}>
-                {/* Loading spinner commented out since no iframe */}
-                {/* {!isLoaded && (
-                  <motion.div
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: isLoaded ? 0 : 1 }}
-                    className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                      className="w-8 h-8 border-4 border-white border-t-transparent rounded-full"
-                    />
-                  </motion.div>
-                )} */}
-
-                {/* <iframe
-                  src="https://example.com/demo-video"
-                  title="QuickDapp Demo Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  onLoad={() => setIsLoaded(true)}
-                  className="w-full h-full border-0"
-                /> */}
-                <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                  <p className="text-gray-500">Demo video coming soon</p>
-                </div>
-              </motion.div>
-            </div>
-
-            <p className="text-gray-600 text-xs mt-3">
-              From zero to deployed dApp in minutes
-            </p>
-          </div>
-
+        {/* Social Links and Creator Info in same row */}
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Social Links */}
           <div className="text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
