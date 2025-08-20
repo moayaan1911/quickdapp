@@ -1,7 +1,7 @@
 {
   "name": "quickdapp",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -11,7 +11,7 @@
     "quickdapp-test": "cd contracts && forge test && cd .. && next lint",
     "quickdapp-dev": "cd contracts && forge compile && cd .. && next dev --turbopack",
     "quickdapp-clean": "cd contracts && forge clean && cd .. && rm -rf .next out",
-    "quickdapp-start": "cd contracts && forge build && cd .. && next build && next start"
+    "quickdapp-start": "cd contracts && forge install --no-commit && forge build && cd .. && next build && next start"
   },
   "dependencies": {
     "ethers": "^6.15.0",
