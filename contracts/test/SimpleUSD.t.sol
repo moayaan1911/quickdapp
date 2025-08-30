@@ -27,7 +27,7 @@ contract SimpleUSDTest is Test {
 
     // Basic ERC20 functionality tests
     function testTokenMetadata() public view {
-        assertEq(simpleUSD.name(), "Simple USD");
+        assertEq(simpleUSD.name(), "SimpleUSD");
         assertEq(simpleUSD.symbol(), "SUSD");
         assertEq(simpleUSD.decimals(), 18);
     }

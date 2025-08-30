@@ -12,8 +12,7 @@ update:; forge update
 
 build:; forge build
 
-test :; forge test 
-
+test-all :; forge test --match-path "test/**/*.sol" -vv 
 
 snapshot :; forge snapshot
 
