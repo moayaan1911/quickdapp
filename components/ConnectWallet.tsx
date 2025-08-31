@@ -1,8 +1,9 @@
 "use client";
 import { createThirdwebClient } from "thirdweb";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
-
+import { client } from "@/lib/client";
 import { inAppWallet, createWallet } from "thirdweb/wallets";
+
 import {
   // Major Mainnets
   ethereum,
@@ -76,10 +77,6 @@ import {
   godWokenTestnetV1,
 } from "thirdweb/chains";
 
-const client = createThirdwebClient({
-  clientId:
-    process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID || "placeholder-client-id",
-});
 // All supported chains - Comprehensive list from Thirdweb
 const supportedChains = [
   // Major Mainnets
