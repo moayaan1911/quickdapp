@@ -25,12 +25,14 @@ quickdapp/
 │   │   ├── SetupWarning.tsx     # Configuration instructions
 │   │   ├── DemoSocialCreator.tsx # Video, social links, creator info
 │   │   ├── Navbar.tsx           # Fixed navigation bar
-│   │   └── BackgroundParticles.tsx # Animated background
+│   │   ├── BackgroundParticles.tsx # Animated background
+│   │   └── ClaimAirdrop.tsx     # Airdrop claiming interface
 │   ├── AiBot.tsx                # AI Bot component
 │   ├── AIChat.tsx               # AI Chat interface
 │   └── ConnectWallet.tsx        # Multi-chain wallet connector
 ├── lib/
-│   └── client.ts                # Thirdweb client configuration
+│   ├── client.ts                # Thirdweb client configuration
+│   └── contracts.ts             # Smart contract addresses and instances
 ├── contracts/                   # Foundry smart contracts
 │   ├── src/                     # Solidity source files
 │   ├── test/                    # Contract tests
@@ -165,6 +167,27 @@ The `contracts/` directory contains a complete Foundry setup:
 - **`script/`** - Deployment scripts
 - **`foundry.toml`** - Foundry configuration
 
+### Smart Contract Integration
+
+QuickDapp includes seamless contract integration through `lib/contracts.ts`:
+
+- **Contract Addresses** - Centralized management of deployed contract addresses
+- **Contract Instances** - Pre-configured Thirdweb contract instances
+- **Multi-chain Support** - Easy switching between different networks
+- **Type Safety** - Full TypeScript support for contract interactions
+
+Example usage:
+```typescript
+import { simpleUSDContract } from "@/lib/contracts";
+import { prepareContractCall, sendTransaction } from "thirdweb";
+
+const transaction = prepareContractCall({
+  contract: simpleUSDContract,
+  method: "function claimAirdrop()",
+  params: [],
+});
+```
+
 ### Wallet Configuration
 
 QuickDapp supports 50+ blockchain networks out of the box:
@@ -212,6 +235,14 @@ QuickDapp includes a powerful AI Bot and Chat system powered by **Thirdweb AI**:
 - **Dynamic theming** based on connection status
 - **Account abstraction** with gas sponsoring
 - **ENS support** for readable addresses
+
+### Airdrop Claiming
+
+- **Conditional visibility** - Only appears when wallet is connected
+- **Smart contract integration** - Directly calls contract functions
+- **Transaction handling** - Secure transaction preparation and execution
+- **Status feedback** - Loading, success, and error states with animations
+- **One-click claiming** - Simple interface for token airdrops
 
 ### Social Integration
 
