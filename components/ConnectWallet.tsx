@@ -75,6 +75,7 @@ import {
   godWoken,
   godWokenTestnetV1,
 } from "thirdweb/chains";
+import { CONTRACT_ADDRESSES } from "@/lib/contracts";
 
 // All supported chains - Comprehensive list from Thirdweb
 const supportedChains = [
@@ -189,7 +190,7 @@ export default function ConnectWallet() {
   return (
     <ConnectButton
       accountAbstraction={{
-        chain: ethereum,
+        chain: sepolia,
         sponsorGas: true,
       }}
       chains={supportedChains}
@@ -202,6 +203,15 @@ export default function ConnectWallet() {
       }}
       theme={isConnected ? "light" : "dark"}
       wallets={wallets}
+      supportedTokens={{
+        [sepolia.id]: [
+          {
+            address: CONTRACT_ADDRESSES.SIMPLE_USD,
+            name: "SimpleUSD",
+            symbol: "SUSD",
+          },
+        ],
+      }}
     />
   );
 }

@@ -6,6 +6,7 @@ import ConnectWallet from "@/components/ConnectWallet";
 import DemoSocialCreator from "@/components/ui/DemoSocialCreator";
 import BackgroundParticles from "@/components/ui/BackgroundParticles";
 import AiBot from "@/components/AiBot";
+import ClaimAirdrop from "@/components/ui/ClaimAirdrop";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <ClaimAirdrop />
         <AiBot />
         <DemoSocialCreator />
         <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
