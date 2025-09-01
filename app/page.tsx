@@ -3,9 +3,9 @@ import Navbar from "@/components/ui/Navbar";
 import HeroSection from "@/components/ui/HeroSection";
 import SetupWarning from "@/components/ui/SetupWarning";
 import ConnectWallet from "@/components/ConnectWallet";
-import AIChat from "@/components/ui/AIChat";
 import DemoSocialCreator from "@/components/ui/DemoSocialCreator";
 import BackgroundParticles from "@/components/ui/BackgroundParticles";
+import AiBot from "@/components/AiBot";
 
 export default function Home() {
   return (
@@ -28,12 +28,12 @@ export default function Home() {
             </div>
             <div className="mt-8">
               <p className="text-gray-500 text-sm">
-                🔐 Secure • 🚀 Fast • ⛽ Gasless • 🌟 Multi-chain • 🤖 AI Assistant
+                🔐 Secure • 🚀 Fast • ⛽ Gasless • 🌟 Multi-chain
               </p>
             </div>
           </div>
         </section>
-        <AIChat />
+        <AiBot />
         <DemoSocialCreator />
         <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
           <div className="text-center">

@@ -10,7 +10,8 @@
     "quickdapp-build": "cd contracts && forge build && cd .. && next build",
     "quickdapp-test": "cd contracts && forge test && cd .. && next lint",
     "quickdapp-dev": "cd contracts && forge compile && cd .. && next dev --turbopack",
-    "quickdapp-init": "cd contracts && forge install && forge build && cd .. && next build && next start"
+    "quickdapp-init": "cd contracts && forge install && forge build && cd .. && next build && next start",
+    "quickdapp-clean": "rm -rf app/docs components/ui contracts/cache contracts/out public/*.svg"
   },
   "dependencies": {
     "ethers": "^6.15.0",

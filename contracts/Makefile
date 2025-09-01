@@ -28,6 +28,12 @@ endif
 
 
 
+# Commands:
+# Deploy: make deploy
+# Deploy to Sepolia: make deploy --network sepolia  
+# Build: make build
+# Test all: make test-all
+
 # Generic deploy command (defaults to SimpleUSD for now)
 deploy:
 	@forge script script/SimpleUSD.s.sol:DeploySimpleUSD $(NETWORK_ARGS)

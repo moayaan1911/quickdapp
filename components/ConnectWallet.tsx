@@ -1,5 +1,4 @@
 "use client";
-import { createThirdwebClient } from "thirdweb";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 import { client } from "@/lib/client";
 import { inAppWallet, createWallet } from "thirdweb/wallets";

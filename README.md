@@ -1,6 +1,6 @@
 # 🚀 QuickDapp - Web3 dApp Starter Template
 
-**Next.js + Foundry + Thirdweb + AI ready** - Your complete Web3 dApp starter template with smart contracts, wallet connectivity, and AI assistant.
+**Next.js + Foundry + Thirdweb ready** - Your complete Web3 dApp starter template with smart contracts and wallet connectivity.
 
 ## ✨ Features
 
@@ -8,7 +8,6 @@
 🚀 **Fast** - Built with Next.js 15 and Turbopack  
 ⛽ **Gasless** - Account abstraction with gas sponsoring  
 🌟 **Multi-chain** - Support for 50+ blockchain networks  
-🤖 **AI Assistant** - Thirdweb AI integration for Web3 queries  
 ⚡ **Modern Stack** - TypeScript, Tailwind CSS, Motion animations
 
 ## 🏗️ Project Structure
@@ -24,18 +23,22 @@ quickdapp/
 │   ├── ui/                      # Reusable UI components
 │   │   ├── HeroSection.tsx      # Hero with typewriter effect
 │   │   ├── SetupWarning.tsx     # Configuration instructions
-│   │   ├── AIChat.tsx           # AI assistant chat interface
 │   │   ├── DemoSocialCreator.tsx # Video, social links, creator info
 │   │   ├── Navbar.tsx           # Fixed navigation bar
 │   │   └── BackgroundParticles.tsx # Animated background
+│   ├── AiBot.tsx                # AI Bot component
+│   ├── AIChat.tsx               # AI Chat interface
 │   └── ConnectWallet.tsx        # Multi-chain wallet connector
+├── lib/
+│   └── client.ts                # Thirdweb client configuration
 ├── contracts/                   # Foundry smart contracts
 │   ├── src/                     # Solidity source files
 │   ├── test/                    # Contract tests
 │   ├── script/                  # Deployment scripts
+│   ├── .env.example             # Contracts environment variables
 │   └── foundry.toml            # Foundry configuration
 ├── public/                      # Static assets
-└── .env.example                # Environment variables template
+└── .env.example                # Frontend environment variables template
 ```
 
 ## 🚀 Quick Start
@@ -64,6 +67,7 @@ quickdapp/
 
 3. **Set up environment variables**
 
+   **Frontend (.env.local):**
    ```bash
    cp .env.example .env.local
    ```
@@ -74,6 +78,15 @@ quickdapp/
    NEXT_PUBLIC_THIRDWEB_CLIENT_ID=your_client_id_here
    THIRDWEB_SECRET_KEY=your_secret_key_here
    ```
+
+   **Contracts (.env):**
+   ```bash
+   cd contracts
+   cp .env.example .env
+   cd ..
+   ```
+
+   Edit `contracts/.env` and add your deployment credentials (RPC URLs, private keys, etc.)
 
 4. **Build smart contracts**
 
@@ -162,22 +175,27 @@ QuickDapp supports 50+ blockchain networks out of the box:
 
 Add more chains in `components/ConnectWallet.tsx`.
 
-## 🤖 AI Assistant
+## 🤖 AI Features
 
-The AI assistant is powered by **Thirdweb AI** and can help with:
+QuickDapp includes a powerful AI Bot and Chat system powered by **Thirdweb AI**:
 
-- 🔍 **Blockchain Queries** - Check balances, transaction history
-- 📊 **Token Analysis** - Get token information and prices
-- 🔄 **DeFi Operations** - Swap tokens, interact with protocols
-- 📝 **Smart Contracts** - Deploy and interact with contracts
-- 🖼️ **NFT Operations** - Mint, transfer, and analyze NFTs
+### AI Bot Component
+- **Smart Integration** - Seamlessly integrates with your dApp
+- **Context-Aware** - Understands wallet connections and chain info
+- **Real-time Responses** - Instant AI-powered assistance
 
-### AI Features
+### AI Chat Interface
+- **Interactive Chat** - Full-featured chat interface with message history
+- **Multi-chain Support** - Works across all supported blockchain networks
+- **Wallet Integration** - Automatically includes user's wallet context
+- **Error Handling** - Graceful handling of API errors and configuration issues
 
-- **Context-Aware** - Automatically includes your wallet address and chain info
-- **Multi-Chain** - Works across all supported blockchain networks
-- **Secure** - API calls made through secure backend endpoint
-- **Real-Time** - Live chat interface with message history
+### AI Capabilities
+- 🔍 **Blockchain Queries** - Check balances, transaction history, token info
+- 📊 **DeFi Operations** - Help with swaps, liquidity, and protocol interactions  
+- 📝 **Smart Contracts** - Assistance with contract deployment and interaction
+- 🖼️ **NFT Operations** - Support for minting, transfers, and NFT analysis
+- 💡 **Web3 Education** - Explanations of blockchain concepts and best practices
 
 ## 🎨 UI Components
 
@@ -187,12 +205,6 @@ The AI assistant is powered by **Thirdweb AI** and can help with:
 - **Tech stack badges** highlighting key technologies
 - **Gradient text effects** and smooth animations
 
-### AI Chat Interface
-
-- **Real-time messaging** with loading states
-- **Wallet integration** for personalized responses
-- **Error handling** with configuration guidance
-- **Responsive design** for all screen sizes
 
 ### Wallet Connection
 
@@ -264,7 +276,6 @@ THIRDWEB_SECRET_KEY=your_secret_key_here
 - **🌐 Thirdweb v5** - Web3 development platform
 - **⚡ Ethers.js v6** - Ethereum JavaScript library
 - **🔗 Multi-chain** - 50+ blockchain networks
-- **🤖 Thirdweb AI** - AI assistant for Web3
 
 ### Smart Contracts
 
